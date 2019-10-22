@@ -1,0 +1,8 @@
+{
+    "hooks": {
+        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+        "pre-commit": "pretty-quick --staged",
+        "pre-push": "npm run test",
+        "post-merge": "npm run test && npm run build"
+    }
+}
