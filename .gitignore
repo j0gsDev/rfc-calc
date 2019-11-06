@@ -1,6 +1,6 @@
-node_modules
-coverage
-reports
-dist
+/node_modules
+/coverage
+/reports
+/dist
 
 package-lock.json
