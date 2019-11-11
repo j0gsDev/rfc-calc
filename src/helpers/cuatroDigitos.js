@@ -16,12 +16,10 @@ export default (primerPalabraNombre, primerPalabraApp, primerPalabraApm) => {
           break
         }
       }
-      console.log('entro al segundo con: ', rfcPatOne, '-', rfcPatTwo, '-', rfcMat, '-', rfcNombre)
       return rfcPatOne + rfcPatTwo + rfcMat + rfcNombre
     }
-    console.log('entro al primer con: ', rfcPatOne + rfcMat + rfcNombre)
     return rfcPatOne + rfcMat + rfcNombre
-  } else if (segundoApellido === '') {
+  } else if (primerPalabraApm === '') {
     const rfcNombre = primerPalabraNombre.substr(0, 2)
     const rfcPat = primerPalabraApp.substr(0, 2)
     return rfcPat + rfcNombre
