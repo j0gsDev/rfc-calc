@@ -1,4 +1,4 @@
-import Clave from '../src/helpers/clave'
+import Clave from '../src'
 describe('calcularRFC', () => {
   test('calcular 10 digitos del rfc', () => {
     const nombre = 'edgar'
