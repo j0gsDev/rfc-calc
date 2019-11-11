@@ -1,5 +1,5 @@
 {
-  "name": "rfc-calc",
+  "name": "@jogs/rfc-calc",
   "version": "1.0.0",
   "description": "Calculadora de RFC",
   "main": "dist/index.js",
