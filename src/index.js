@@ -6,6 +6,12 @@ import calculaDate from './helpers/calculaDate'
 import claveDiferenciadora from './helpers/claveDiferenciadora'
 import digitoVerificador from './helpers/digitoVerificador'
 
+/**
+ * @param  {string} nombre
+ * @param  {string} primerApellido
+ * @param  {string} segundoApellido
+ * @param  {string} fechaNac - YYYY-MM-DD
+ */
 function RFC(nombre, primerApellido, segundoApellido = '', fechaNac) {
   // Quitando prefijos y nombres Jose Maria
   const nombreSnPref = quitarPrefijos(nombre)
