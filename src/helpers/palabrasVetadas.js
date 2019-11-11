@@ -1,20 +1,51 @@
-export default string =>
-  string
-    .replace(/BUEI/g, 'BUEX')
-    .replace(/BUEY/g, 'BUEX')
-    .replace(/CACA/g, 'CACX')
-    .replace(/CACO/g, 'CACX')
-    .replace(/CAGA/g, 'CAGX')
-    .replace(/CAGO/g, 'CAGX')
-    .replace(/CAKA/g, 'CAKX')
-    .replace(/COGE/g, 'COGX')
-    .replace(/COJA/g, 'COJX')
-    .replace(/COJE/g, 'COJX')
-    .replace(/COJI/g, 'COJX')
-    .replace(/COJO/g, 'COJX')
-    .replace(/CULO/g, 'CULX')
-    .replace(/FETO/g, 'FETX')
-    .replace(/GUEY/g, 'GUEX')
-    .replace(/JOTO/g, 'JOTX')
-    .replace(/Ú/g, 'U')
-    .replace(/Ú/g, 'U')
+const arrrayExclude = [
+  'BUEI',
+  'BUEY',
+  'CACA',
+  'CACO',
+  'CAGA',
+  'CAGO',
+  'CAKA',
+  'COGE',
+  'COJA',
+  'COJE',
+  'COJI',
+  'COJO',
+  'CULO',
+  'FETO',
+  'GUEY',
+  'JOTO',
+  'KACA',
+  'KACO',
+  'KOGE',
+  'KOJO',
+  'KAKA',
+  'KULO',
+  'MAME',
+  'MAMO',
+  'MEAR',
+  'MEON',
+  'MION',
+  'MOCO',
+  'MULA',
+  'PEDA',
+  'PEDO',
+  'PENE',
+  'PUTA',
+  'PUTO',
+  'QULO',
+  'RATA',
+  'KAGA',
+  'KAGO',
+  'RUIN',
+]
+export default string => {
+  const compara = arrrayExclude.includes(string)
+  if (compara) {
+    const arrString = string.split('')
+    const newString = arrString[0] + arrString[1] + arrString[2] + 'X'
+    return newString
+  } else {
+    return string
+  }
+}
