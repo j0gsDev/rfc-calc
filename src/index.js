@@ -12,7 +12,7 @@ import digitoVerificador from './helpers/digitoVerificador'
  * @param  {string} segundoApellido
  * @param  {string} fechaNac - YYYY-MM-DD
  */
-function RFC(nombre, primerApellido, segundoApellido = '', fechaNac) {
+module.exports = function(nombre, primerApellido, segundoApellido, fechaNac) {
   // Quitando prefijos y nombres Jose Maria
   const nombreSnPref = quitarPrefijos(nombre)
   const primerApellidoSnPref = quitarPrefijos(primerApellido)
@@ -45,4 +45,3 @@ function RFC(nombre, primerApellido, segundoApellido = '', fechaNac) {
 
   return rfc
 }
-export default RFC
