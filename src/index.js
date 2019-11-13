@@ -14,34 +14,20 @@ import digitoVerificador from './helpers/digitoVerificador'
  */
 module.exports = function(nombre, primerApellido, segundoApellido, fechaNac) {
   // Quitando prefijos y nombres Jose Maria
-  const nombreSnPref = quitarPrefijos(nombre)
-  const primerApellidoSnPref = quitarPrefijos(primerApellido)
-  const segundoApellidoSnPref = quitarPrefijos(segundoApellido)
-  // separar por palabras en arreglos
-  const nombreSeparado = nombreSnPref.split(' ')
-  const primerApellidoSeparado = primerApellidoSnPref.split(' ')
-  const segundoApellidoSeparado = segundoApellidoSnPref.split(' ')
-  // tomando primer palabra de cada arreglo
-  const primerPalabraNombreCa = nombreSeparado[0]
-  const primerPalabraAppCa = primerApellidoSeparado[0]
-  const primerPalabraApmCa = segundoApellidoSeparado[0]
-  // Quitando acentos
-  const primerPalabraNombre = quitaAcentos(primerPalabraNombreCa)
-  const primerPalabraApp = quitaAcentos(primerPalabraAppCa)
-  const primerPalabraApm = quitaAcentos(primerPalabraApmCa)
-  // calcular primeras 4 letras
-  const primerosCuatro = cuatroDigitos(primerPalabraNombre, primerPalabraApp, primerPalabraApm)
+  const nombreSnPref = quitaAcentos(quitarPrefijos(nombre))
+  const primerApellidoSnPref = quitaAcentos(quitarPrefijos(primerApellido))
+  const segundoApellidoSnPref = quitaAcentos(quitarPrefijos(segundoApellido))
+
+  const primerosCuatro = cuatroDigitos(nombreSnPref, primerApellidoSnPref, segundoApellidoSnPref)
   // excluir plabras vetadas
   const evaluaVetada = palabrasVetadas(primerosCuatro)
   // calcular 6 digitos
   const datosFecha = calculaDate(fechaNac)
   // calcula clave diferenciadora
-  const clavDif = claveDiferenciadora(`${primerPalabraApp} ${primerPalabraApm} ${primerPalabraNombre}`)
+  const clavDif = claveDiferenciadora(`${nombreSnPref} ${primerApellidoSnPref} ${segundoApellidoSnPref}`)
   // calculando RFC con clave dif
-  let rfc = evaluaVetada + datosFecha + clavDif
+  const rfc = evaluaVetada + datosFecha + clavDif
   // calcula digito verificador
-  const digDif = digitoVerificador(rfc)
-  rfc += digDif
 
-  return rfc
+  return rfc + digitoVerificador(rfc)
 }

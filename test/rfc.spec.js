@@ -14,6 +14,13 @@ describe('calcularRFC', () => {
     const fechNac = '1992-07-22'
     expect(Clave(nombre, app, apm, fechNac)).toBe('GASJ920722ILA')
   })
+  test('calcular 10 digitos del rfc', () => {
+    const nombre = 'hector alan'
+    const app = 'lopez'
+    const apm = 'diaz'
+    const fechNac = '1995-04-24'
+    expect(Clave(nombre, app, apm, fechNac)).toBe('LODH950424G49')
+  })
   test('Cuando la letra inicial de cualquiera de los apellidos o nombre sea compuesta, únicamente se anotará la inicial de ésta. En la Ch la C y en la Ll la L.', () => {
     const nombre = 'Manuel'
     const app = 'Chávez'
