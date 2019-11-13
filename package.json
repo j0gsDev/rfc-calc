@@ -1,6 +1,6 @@
 {
   "name": "rfc-calc",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Calculadora de RFC",
   "main": "dist/index.js",
   "devDependencies": {
@@ -44,5 +44,9 @@
     "coverageLink": "../coverage/lcov-report/index.html"
   },
   "author": "Joaquin Garcia <joaquin@gendra.dev>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/j0gsDev/rfc-calc.git"
+  }
 }

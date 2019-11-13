@@ -9,6 +9,10 @@ describe('digitoVerificador', () => {
     const rfc = 'GASJ920722IL'
     expect(digitoVerificador(rfc)).toBe('A')
   })
+  test('Debe responder con "A" al recibir "LODH950401G4"', () => {
+    const rfc = 'LODH950424G4'
+    expect(digitoVerificador(rfc)).toBe('9')
+  })
   test('Debe generar un error al recibir un string con longitud diferente a 12', () => {
     try {
       digitoVerificador('GASJ')
